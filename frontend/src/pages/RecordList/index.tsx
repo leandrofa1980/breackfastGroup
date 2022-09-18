@@ -12,8 +12,8 @@ function RecordList() {
           <table className="table table-striped table-sm">
             <thead className="record-table">
               <tr>
-                <th>Participante</th>
-                <th>Opção</th>
+                <th>Cadastrados</th>
+                <th>Opções</th>
               </tr>
             </thead>
             <tbody>
