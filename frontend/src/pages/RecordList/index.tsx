@@ -1,8 +1,15 @@
-import Footer from '../../components/Footer';
+import axios from 'axios';
+import { useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import './styles.css';
 
 function RecordList() {
+  useEffect(() => {
+    axios.get('http://localhost:8080/participantes').then((response) => {
+      console.log(response.data);
+    });
+  }, []);
+
   return (
     <>
       <Navbar />
