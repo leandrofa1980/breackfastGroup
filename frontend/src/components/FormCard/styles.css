@@ -1,0 +1,25 @@
+:root {
+  --color-dark: #232a41;
+}
+
+.container {
+  max-width: 540px;
+}
+
+.registro-container {
+  padding: 20px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registro-container h2 {
+  margin: 5px 0;
+  font-size: 24px;
+  color: #ff8400;
+  font-weight: 400;
+}
+
+.btn-dark {
+  background-color: var(--color-dark) !important;
+}

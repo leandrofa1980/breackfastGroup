@@ -1,0 +1,38 @@
+.nav-container {
+  background-color: #232a41;
+  height: 110px;
+  width: 100%;
+  padding: 20px;
+}
+
+.nav-main {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.nav-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 5px 0 5px 0;
+}
+
+.menu-nav-items {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-nav-items li {
+  margin: 10px;
+  font-size: 14px;
+}
+
+.menu-nav-items a {
+  text-decoration: none;
+}
