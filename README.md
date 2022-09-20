@@ -1,6 +1,4 @@
-# breackfastGroup
-
-##Breakfast Group
+#Breakfast Group
 
 App desenvolvida para cadastro de um grupo, que registram o que cada um vai levar no café da manhã para a empresa, 
 é um momento de confraternização entres os colaboradores antes do início da jornada de trabalho.
