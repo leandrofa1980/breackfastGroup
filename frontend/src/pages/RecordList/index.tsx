@@ -5,9 +5,11 @@ import './styles.css';
 
 function RecordList() {
   useEffect(() => {
-    axios.get('http://localhost:8080/participantes').then((response) => {
-      console.log(response.data);
-    });
+    axios
+      .get('https://breakfast-leandrofa1980.herokuapp.com/participantes')
+      .then((response) => {
+        console.log(response.data);
+      });
   }, []);
 
   return (
