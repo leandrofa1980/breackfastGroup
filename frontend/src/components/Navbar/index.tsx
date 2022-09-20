@@ -13,7 +13,7 @@ function Navbar() {
               </a>
             </li>
             <li>
-              <a href="/record">Participantes</a>
+              <a href="/participantes">Participantes</a>
             </li>
           </ul>
         </nav>

@@ -10,7 +10,7 @@ function RecordList() {
 
   useEffect(() => {
     axios.get(`${BASE_URL}/participantes`).then((response) => {
-      setParticipantes(response.data.content);
+      setParticipantes(response.data);
     });
   }, []);
 

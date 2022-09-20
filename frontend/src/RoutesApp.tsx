@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import RecordList from './pages/RecordList';
 
@@ -8,7 +7,7 @@ function RoutesApp() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="record" element={<RecordList />} />
+        <Route path="participantes" element={<RecordList />} />
       </Routes>
     </>
   );
