@@ -1,6 +1,6 @@
 # Breakfast Group
 
-Com o intuito colocar em prática o que venho estudando construi essa app, ainda esta em desenvolvimento.
+Com o intuito colocar em prática o que venho estudando estou desenvolvendo essa aplicação.
 
 App desenvolvida para cadastro de um grupo, que registram o que cada um vai levar no café da manhã para a empresa, 
 é um momento de confraternização entres os colaboradores antes do início da jornada de trabalho.
