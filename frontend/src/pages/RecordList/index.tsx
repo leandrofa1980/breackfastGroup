@@ -1,15 +1,17 @@
 import axios from 'axios';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar';
+import { Participante } from '../../models/participante';
+import { BASE_URL } from '../../utils/request';
 import './styles.css';
 
 function RecordList() {
+  const [participantes, setParticipantes] = useState<Participante[]>([]);
+
   useEffect(() => {
-    axios
-      .get('https://breakfast-leandrofa1980.herokuapp.com/participantes')
-      .then((response) => {
-        console.log(response.data);
-      });
+    axios.get(`${BASE_URL}/participantes`).then((response) => {
+      setParticipantes(response.data.content);
+    });
   }, []);
 
   return (
@@ -26,10 +28,14 @@ function RecordList() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Fulano de tal</td>
-                <td>Bolo de rolo</td>
-              </tr>
+              {participantes.map((participantes) => {
+                return (
+                  <tr key={participantes.id}>
+                    <td>{participantes.nome}</td>
+                    <td>{participantes.opcao}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
