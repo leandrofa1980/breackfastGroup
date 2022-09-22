@@ -3,8 +3,8 @@ import './styles.css';
 function Navbar() {
   return (
     <>
-      <header className="nav-container">
-        <nav className="nav-main">
+      <nav className="nav-container">
+        <div className="container-fluid nav-main">
           <h1 className="nav-title">Breakfast Group</h1>
           <ul className="menu-nav-items">
             <li>
@@ -16,8 +16,8 @@ function Navbar() {
               <a href="/participantes">Participantes</a>
             </li>
           </ul>
-        </nav>
-      </header>
+        </div>
+      </nav>
     </>
   );
 }
