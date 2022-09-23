@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Navbar from '../../components/Navbar';
 import { Participante } from '../../models/participante';
 import { BASE_URL } from '../../utils/request';
 import './styles.css';
@@ -16,7 +15,6 @@ function RecordList() {
 
   return (
     <>
-      <Navbar />
       <div className="container col-sm-8 record-container">
         <h2 className=" record-title">Participantes</h2>
         <div className="table-responsive">
