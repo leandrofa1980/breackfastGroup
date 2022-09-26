@@ -30,11 +30,11 @@ public class ParticipanteResource {
 
 	@GetMapping
 	public ResponseEntity<Page<Participante>> findAll(@RequestParam(value = "page", defaultValue = "0") Integer page,
-			@RequestParam(value = "linesPerPage", defaultValue = "5") Integer linesPerPage,
+			@RequestParam(value = "size", defaultValue = "12") Integer size,
 			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
 			@RequestParam(value = "orderBy", defaultValue = "nome") String orderBy) {
 		
-		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
+		PageRequest pageRequest = PageRequest.of(page, size, Direction.valueOf(direction), orderBy);
 		Page<Participante> list = service.findAllPaged(pageRequest);
 		return ResponseEntity.ok().body(list);
 	}

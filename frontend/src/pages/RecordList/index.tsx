@@ -1,15 +1,27 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Participante } from '../../models/participante';
+import { Link } from 'react-router-dom';
+import { Participante } from '../../types/participante';
+import { AxiosParams } from '../../types/vendor/axios';
+import { SpringPage } from '../../types/vendor/spring';
 import { BASE_URL } from '../../utils/request';
 import './styles.css';
 
 function RecordList() {
-  const [participantes, setParticipantes] = useState<Participante[]>([]);
+  const [page, setPage] = useState<SpringPage<Participante>>();
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/participantes`).then((response) => {
-      setParticipantes(response.data);
+    const params: AxiosParams = {
+      method: 'GET',
+      url: `${BASE_URL}/participantes`,
+      params: {
+        page: 0,
+        size: 12,
+      },
+    };
+
+    axios(params).then((response) => {
+      setPage(response.data);
     });
   }, []);
 
@@ -26,14 +38,14 @@ function RecordList() {
               </tr>
             </thead>
             <tbody>
-              {participantes.map((participantes) => {
-                return (
-                  <tr key={participantes.id}>
-                    <td>{participantes.nome}</td>
-                    <td>{participantes.opcao}</td>
-                  </tr>
-                );
-              })}
+              {page?.content.map((participantes) => (
+                <tr key={participantes.id}>
+                  <Link to="/participantes">
+                    <td>{participantes?.nome}</td>
+                    <td>{participantes?.opcao}</td>
+                  </Link>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
