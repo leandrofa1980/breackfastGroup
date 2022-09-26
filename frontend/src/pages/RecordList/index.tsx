@@ -1,14 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Participante } from '../../types/participante';
 import { AxiosParams } from '../../types/vendor/axios';
-import { SpringPage } from '../../types/vendor/spring';
 import { BASE_URL } from '../../utils/request';
 import './styles.css';
 
 function RecordList() {
-  const [page, setPage] = useState<SpringPage<Participante>>();
+  const [page, setPage] = useState<Participante[]>([]);
 
   useEffect(() => {
     const params: AxiosParams = {
@@ -19,7 +17,6 @@ function RecordList() {
         size: 12,
       },
     };
-
     axios(params).then((response) => {
       setPage(response.data);
     });
@@ -38,14 +35,14 @@ function RecordList() {
               </tr>
             </thead>
             <tbody>
-              {page?.content.map((participantes) => (
-                <tr key={participantes.id}>
-                  <Link to="/participantes">
+              {page?.map((participantes) => {
+                return (
+                  <tr key={participantes?.id}>
                     <td>{participantes?.nome}</td>
                     <td>{participantes?.opcao}</td>
-                  </Link>
-                </tr>
-              ))}
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

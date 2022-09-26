@@ -1,37 +1,33 @@
-package br.com.leandrofa1980.breackfast.entities;
+package br.com.leandrofa1980.breackfast.dto;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import br.com.leandrofa1980.breackfast.entities.Participante;
 
-@Entity
-@Table(name = "tb_participantes")
-public class Participante implements Serializable {
+public class ParticipanteDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
-	
-	@Column(unique = true)
 	private String cpf;
-	
-	@Column(unique = true)
 	private String opcao;
 	
-	public Participante() {}
-	
-	public Participante(Long id, String nome, String cpf, String opcao) {
+	public ParticipanteDTO() {
+		
+	}
+
+	public ParticipanteDTO(Long id, String nome, String cpf, String opcao) {
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.opcao = opcao;
+	}
+	
+	public ParticipanteDTO(Participante entity) {
+		this.id = entity.getId();
+		this.nome = entity.getNome();
+		this.cpf = entity.getCpf();
+		this.opcao = entity.getOpcao();
 	}
 
 	public Long getId() {
