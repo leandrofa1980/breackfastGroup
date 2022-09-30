@@ -37,7 +37,7 @@ function RecordList() {
             <tbody>
               {page?.map((participantes) => {
                 return (
-                  <tr key={participantes?.id}>
+                  <tr key={participantes?.cpf}>
                     <td>{participantes?.nome}</td>
                     <td>{participantes?.opcao}</td>
                   </tr>
